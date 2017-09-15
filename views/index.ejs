@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:500" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <% for (var x in errors) { %>
+            <h4>error <%= errors[x] %></h4>
+        <% } %>
+        <div class='bordered'>
+            <% for (var mon in mongooseArr) { %>
+                <div class='bordered'>
+                        <p> name: <%= mongooseArr[mon].name %></p>
+                        <p> species: <%= mongooseArr[mon].species %></p>
+                        <p><%= mongooseArr[mon].notes %></p>
+                        <div class='submenu'>
+                            <a href='/mongooses/edit/<%= mongooseArr[mon].id %>'>
+                                <button>edit this critter</button>
+                            </a>
+                            <a href='/mongooses/destroy/<%= mongooseArr[mon].id %>'>
+                                <button>delete record of this critter</button>
+                            </a>
+                        </div>
+                </div>
+            <% } %>
+        </div>
+        <a href='/mongooses/new'>
+            <button>
+                new mongoose form
+            </button>
+        </a>
+    </body>
+</html>

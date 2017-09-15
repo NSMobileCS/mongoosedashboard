@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:500" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <% for (var x in errors) { %>
+            <h4>error <%= errors[x] %></h4>
+        <% } %>
+        <form action="/mongooses/<%= goose.id %>" id="addmgooseform" method="POST" class='classy formclass'>
+            <label for='name'>name </label>
+            <input type='text' id='name' name='name' value="<%= goose.name %>">
+            <label for="species">species </label>
+            <input type='text' id='species' name='species' value='<%= goose.species %>' >
+            <label for="notes">note </label>
+            <input type='text' id='notes' name='notes' value='<%= goose.notes %>'>
+            <input type="submit" value="save changes">
+        </form>
+    </body>
+</html>
+    
